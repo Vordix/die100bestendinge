@@ -58,16 +58,16 @@ void do_something(){
     BestenDing a3 = BestenDing("Digitale Briefmarke");
     BestenDing a4 = BestenDing("Clips (zum verschließen von Essen)");
     BestenDing a5 = BestenDing("Fast Charging");
-    BestenDing a6 = BestenDing("Maßband");
+    BestenDing a6 = BestenDing("Massband");
     BestenDing a7 = BestenDing("Cheeseburger");
     BestenDing a8 = BestenDing("Luftmatratze");
     BestenDing a9 = BestenDing("Jojo");
     BestenDing a10 = BestenDing("Schaumwaffel");
     BestenDing a11 = BestenDing("Handschlag");
-    BestenDing a12 = BestenDing("Feuchttücher");
+    BestenDing a12 = BestenDing("Feuchttuecher");
     BestenDing a13 = BestenDing("Monopoly");
     BestenDing a14 = BestenDing("(Wand-)Poster");
-    BestenDing a15 = BestenDing("(Handy-)Hülle");
+    BestenDing a15 = BestenDing("(Handy-)Huelle");
     BestenDing a16 = BestenDing("Schaukel");
     BestenDing a17 = BestenDing("Treppe");
     BestenDing a18 = BestenDing("Fieberthermometer");
@@ -79,13 +79,13 @@ void do_something(){
     BestenDing a24 = BestenDing("Karpador");
     BestenDing a25 = BestenDing("Hummel");
     BestenDing a26 = BestenDing("Die Siedler von Catan");
-    BestenDing a27 = BestenDing("Gürtel");
+    BestenDing a27 = BestenDing("Guertel");
     BestenDing a28 = BestenDing("Currywurst mit Pommes");
     BestenDing a29 = BestenDing("USB-C");
     BestenDing a30 = BestenDing("Rolladen");
     BestenDing a31 = BestenDing("Alpen");
     BestenDing a32 = BestenDing("Google Maps");
-    BestenDing a33 = BestenDing("Göffel");
+    BestenDing a33 = BestenDing("Goeffel");
     BestenDing a34 = BestenDing("Manuellsen");
     BestenDing a35 = BestenDing("AUX Anschluss");
     BestenDing a36 = BestenDing("Propellerhut");
@@ -93,24 +93,24 @@ void do_something(){
     BestenDing a38 = BestenDing("Kuscheltier/-ding");
     BestenDing a39 = BestenDing("Dinosaurier");
     BestenDing a40 = BestenDing("Cap/Rucksack mit Trinkschlauch");
-    BestenDing a41 = BestenDing("Getränke Flatrate");
+    BestenDing a41 = BestenDing("Getraenke Flatrate");
     BestenDing a42 = BestenDing("Plus 1 Aktionen");
     BestenDing a43 = BestenDing("Medaillien & Pokale");
     BestenDing a44 = BestenDing("Automatischer Fensterheber");
     BestenDing a45 = BestenDing("Mond");
-    BestenDing a46 = BestenDing("Online/Handy Tickets für Öffentliche Verkehrsmittel");
+    BestenDing a46 = BestenDing("Online/Handy Tickets fuer Oeffentliche Verkehrsmittel");
     BestenDing a47 = BestenDing("Tee");
     BestenDing a48 = BestenDing("Postkarten bekommen");
     BestenDing a49 = BestenDing("Google-/Apple Pay");
     BestenDing a50 = BestenDing("Tablet Bestellungen im Restaurant");
     BestenDing a51 = BestenDing("Walkie Talkies");
-    BestenDing a52 = BestenDing("Kabelkopfhörer");
+    BestenDing a52 = BestenDing("Kabelkopfhoerer");
     BestenDing a53 = BestenDing("Bank mit Lehne");
-    BestenDing a54 = BestenDing("Eisgekühltes Getränk");
+    BestenDing a54 = BestenDing("Eisgekühltes Getraenk");
     BestenDing a55 = BestenDing("Waschmachine");
     BestenDing a56 = BestenDing("Shazam");
     BestenDing a57 = BestenDing("Pokemon");
-    BestenDing a58 = BestenDing("Getränkehalter im Auto");
+    BestenDing a58 = BestenDing("Getraenkehalter im Auto");
     BestenDing a59 = BestenDing("Regenschirm");
 
 //TODO hier noch weiter bis alle Items da sind / veröffentlicht wurden
@@ -124,10 +124,10 @@ void do_something(){
     int random1 = 0;
     int random2 = 0;
 
-    cout<<"Willkommen beim Brain-Pain Bestenliste-Pruefer"<<endl<<"Waehle die Anzahl an Iterationen (Ganzzahl)"<<endl;
+    cout<<"Willkommen beim Brain-Pain Bestenliste-Pruefer"<<endl<<"Schreibe die Anzahl an Iterationen als Ganzzahl und druecke ENTER (Empfohlen: 200-300)"<<endl;
     int anzahlRunden;
     cin>>anzahlRunden;
-    cout<<"Du hast "<<anzahlRunden<<" Runden gewählt"<<endl<<"Im Folgenden werden dir zwei Items aus der Liste gezeigt. Du waehlst immer das Item aus, das du besser findest."<<endl<<"Zum Auswaehlen eines Items schreibe 1 oder 2 in die Zeile und Druecke ENTER."<<endl<<"Am Ende wird dir in absteigender Reihenfolge deine persoenliche Reihenfolge angezeigt."<<endl<<"Viel Spass! Los gehts"<<endl;
+    cout<<"Du hast "<<anzahlRunden<<" Runden gewaehlt"<<endl<<"Im Folgenden werden dir zwei Items aus der Liste gezeigt. Du waehlst immer das Item aus, das du besser findest."<<endl<<"Zum Auswaehlen eines Items schreibe 1 oder 2 in die Zeile und Druecke ENTER."<<endl<<"WICHTIG: Schreibe NUR 1 oder 2 - sonst nichts!"<<endl<<"Am Ende wird dir in absteigender Reihenfolge deine persoenliche Reihenfolge angezeigt."<<endl<<"Viel Spass! Los gehts"<<endl<<endl;
 
     for(int i =0; i<anzahlRunden; i++){
         do{
@@ -138,7 +138,7 @@ void do_something(){
         vektorAller[random1].increase_plays_by_one();
         vektorAller[random2].increase_plays_by_one();
          
-         cout<<"Frage "<<i+1<<" von "<<anzahlRunden<<":"<<endl<<"1: "<< vektorAller[random1].get_name()<<" 2: "<< vektorAller[random2].get_name() << endl;
+         cout<<"Frage "<<(1+i)<<" von "<<anzahlRunden<<":"<<endl<<"1: "<< vektorAller[random1].get_name()<<" 2: "<< vektorAller[random2].get_name() << endl;
          char input;
          cin>>input;
          if(input=='1')
@@ -162,6 +162,7 @@ void do_something(){
     for(auto item : vektorAller){
         cout<< item.get_name()<<" : "<<(item.get_winrate()*100.00)<<"% - "<<item.get_likes()<<" Likes bei "<<item.get_plays()<<" Spielen"<<endl;
     }
+    cout<<endl<<"Danke an u/ginipain fuer die Sammlung an besten Dingen"<<endl<<"Danke fuers Spielen. Du kannst das Programm jetzt schliessen."<<endl;
 }
 
 int main(){
