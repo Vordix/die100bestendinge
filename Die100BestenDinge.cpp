@@ -4,6 +4,7 @@
 #include <ctime>
 #include <algorithm>
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 class BestenDing{
@@ -47,6 +48,66 @@ class BestenDing{
         likes++;
     }
 };
+
+void loesche_csv(){
+    fstream file("bestenliste.csv",ios::trunc);
+    file.close();
+}
+
+void schreibe_csv_anfang(vector<BestenDing> vektor){
+
+    fstream csv ("bestenliste.csv");
+
+    if(!csv){
+        cout<<"Error loading CSV file in Anfang"<<endl;
+        return;
+    }
+    //lesezeiger an letzte stelle setzten
+    csv.seekg(0,csv.end);
+    //Falls die CSV-Datei leer ist: bzw. falls die Position des Lesezeigers = 0
+    if(csv.tellg()==0){
+        //dann schreibe die CSV-Datei mit folgender Struktur:
+        for(auto &item : vektor){
+            csv<<item.get_name()<<";"<<item.get_likes()<<";"<<item.get_plays()<<endl;     
+        }
+    }
+}
+
+void schreibe_csv_ende(vector<BestenDing> vektor){
+    fstream csv ("bestenliste.csv");
+    if(!csv){
+        cout<<"Error loading CSV file in Ende"<<endl;
+        return;
+    }
+    
+    for(auto &item : vektor){
+        csv<<item.get_name()<<";"<<item.get_likes()<<";"<<item.get_plays()<<endl;     
+    }
+}
+
+vector<BestenDing> update_csv(vector<BestenDing> vektor){
+    fstream csv ("bestenliste.csv");
+    int int_temp;
+    for(auto &item : vektor){
+        string string_temp;
+        getline(csv,string_temp,';');
+        if(string_temp==item.get_name()){
+
+            getline(csv,string_temp, ';');
+            int_temp = stoi(string_temp);
+            //cout<<"Debugg: int_temp: "<<int_temp<< " and string_temp: "<<string_temp<<endl;
+            item.likes = item.likes + int_temp;
+
+            getline(csv,string_temp);
+            int_temp = stoi(string_temp);
+            item.plays = item.plays + int_temp;
+        }else{cout<<"[ERROR] CSV Name doesnt match Vektor Name"<<endl;}
+    }
+    //loesche_csv();
+    csv.close();
+    schreibe_csv_ende(vektor);
+    return vektor;
+}
 
 void do_something(){
 
@@ -118,6 +179,8 @@ void do_something(){
     
     vector<BestenDing> vektorAller = {a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17,a18,a19,a20,a21,a22,a23,a24,a25,a26,a27,a28,a29,a30,a31,a32,a33,a34,a35,a36,a37,a38,a39,a40,a41,a42,a43,a44,a45,a46,a47,a48,a49,a50,a51,a52,a53,a54,a55,a56,a57,a58,a59};
 
+    schreibe_csv_anfang(vektorAller);
+
     //Zeit als Randomizer seed setzen
     srand(time(NULL));
 
@@ -150,6 +213,8 @@ void do_something(){
             vektorAller[random2].increase_likes_by_one();
          }
     }
+    //dem Vektor die Daten aus der CSV hinzufügen
+    vektorAller = update_csv(vektorAller);
 
     for(auto &item : vektorAller){
         item.calculate_winrate();
