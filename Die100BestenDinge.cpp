@@ -49,16 +49,12 @@ class BestenDing{
     }
 };
 
-void loesche_csv(){
-    fstream file("bestenliste.csv",ios::trunc);
-    file.close();
-}
-
 void schreibe_csv_anfang(vector<BestenDing> vektor){
 
     fstream csv ("bestenliste.csv");
 
     if(!csv){
+        fstream csv ("bestenliste.csv", ios::out);
         cout<<"Error loading CSV file in Anfang"<<endl;
         return;
     }
@@ -101,9 +97,9 @@ vector<BestenDing> update_csv(vector<BestenDing> vektor){
             getline(csv,string_temp);
             int_temp = stoi(string_temp);
             item.plays = item.plays + int_temp;
-        }else{cout<<"[ERROR] CSV Name doesnt match Vektor Name"<<endl;}
+        }//else{cout<<"[ERROR] CSV Name doesnt match Vektor Name"<<endl;}
     }
-    //loesche_csv();
+
     csv.close();
     schreibe_csv_ende(vektor);
     return vektor;
